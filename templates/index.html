@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>河南中医大学</title>
+    <link href="/static/css/style.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+
+</head>
+
+<body>
+<!--top-->
+<div class="w100 overflow"><img src="/static/images/index_r1_c1.jpg"></div>
+<!--nav-->
+<div class="nav_bg overflow clearfix">
+    <div class="wrap overflow nav">
+        <ul>
+            <li><a href="#" class="nav_hover">首页</a></li>
+            <li><a href="/kcjs/">课程介绍 </a></li>
+            <li><a href="/teachers/">教师队伍</a></li>
+            <li><a href="/dg/">教学大纲</a></li>
+            <li><a href="/kj/"> 教学课件</a></li>
+            <li><a href="#">参考资料</a></li>
+            <li><a href="#">基地建设</a></li>
+            <li><a href="#">参考资料</a></li>
+            <li><a href="#">特色饮片</a></li>
+            <li><a href="#">炮制数据库</a></li>
+            <li><a href="#">问题讨论</a></li>
+            <li><a href="#">网站链接</a></li>
+        </ul>
+    </div>
+</div>
+<!--js-->
+
+
+{#轮播图#}
+<div class="w100 overflow clearfix  ">
+    <div class="flexslider">
+        <ul class="slides">
+
+            {% for banner in banner_list %}
+
+                <li style="background:url(/{{ banner.cover }}) 50% 0 no-repeat; z-index:1"></li>
+
+            {% endfor %}
+
+
+        </ul>
+    </div>
+
+    <!-- 代码end -->
+    <script src="/static/js/jquery.flexslider-min.js"></script>
+    <script>
+        $(function () {
+            $('.flexslider').flexslider({
+                directionNav: true,
+                pauseOnAction: false
+            });
+        });
+    </script>
+</div>
+{#轮播图结束#}
+
+
+<!--课程介绍-->
+<div class="wrap overflow clearfix mt30">
+    <!--left-->
+
+
+    <div class="w598 fl overflow">
+        <div class="w565 overflow pt20">
+            <div class="w100 overflow">
+                <p class="fl"><img src="/static/images/index_r7_c7.jpg"></p>
+                <span class="fr pt5"><a href="3">更多>></a></span>
+            </div>
+            <div class="w100 overflow clearfix">
+
+
+                {#            课程介绍#}
+                {% for kecheng in kecheng_list %}
+                    <dl>
+                        <dt>
+                            <a href="/xq/"><img src="/{{ kecheng.cover }}" width="90" height="118"></a>
+                        </dt>
+                        <dd>
+                            <h5><a href="/xq/">{{ kecheng.title }}</a></h5>
+                            <p><a href="/xq/">查看更多</a></p>
+                        </dd>
+                    </dl>
+                {% endfor %}
+                {#            课程介绍结束#}
+            </div>
+        </div>
+    </div>
+
+
+    <!--left-->
+    <div class="w519 fr overflow">
+        <div class="w468  overflow pt20">
+            <div class="w100 overflow">
+                <p class="fl"><img src="/static/images/index_r7_c16.jpg"></p>
+                <span class="fr pt5"><a href="3">更多>></a></span>
+            </div>
+            <div class="w100 overflow pt15 clearfix">
+
+                <ul>
+
+                    {% for wenti in wenti_list %}
+                        <li><span>{{ wenti.pub_date }}</span><a href="/xq/">{{ wenti.title }}</a></li>
+                    {% endfor %}
+
+                </ul>
+                <ol class="pt20"><a href="#"><img src="/static/images/index_r30_c39.jpg"></a></ol>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--队伍-->
+<div class="wrap team overflow clearfix mt25">
+    <div class="w1092 overflow pt15">
+        <div class="w100 overflow">
+            <p class="fl"><img src="/static/images/index_r15_c7.jpg"></p>
+            <span class="fr pt5"><a href="3">更多>></a></span>
+        </div>
+        <div class="img-scroll">
+            <span class="prev pl10 pr10"><img src="/static/images/index_r18_c6.jpg"/></span>
+            <span class="next pr10"><img src="/static/images/index_r18_c20.jpg"/></span>
+
+            <div class="img-list">
+                <div class="img_list1">
+
+
+                    <ul>
+
+                        {% for teacher in teacher_list %}
+                            <li>
+                                <a href="/teachers/">
+                                    <p><img src="/{{ teacher.cover }}" width="180" height="135"/></p>
+                                    <span>{{ teacher.name }}</span>
+                                </a>
+                            </li>
+
+                        {% endfor %}
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <script type="text/javascript" src="/static/js/011.js"></script>
+    </div>
+</div>
+<!--版权-->
+<div class="copy_bg clearfix">
+    <div class="wrap copy">
+        <p>
+            河南中医药大学权所有 © 2018 Henan University of Chinese Medicine <br>
+            豫ICP备05002492号-1 <br>
+            河南省 郑州市 郑东新区 金水东路156号
+        </p>
+        <ul>
+            <li>
+                <a href="#"><img src="/static/images/ty0_r4_c2.png"></a>
+            </li>
+            <li>
+                <a href="#"><img src="/static/images/ty0_r4_c4.png">
+                    <div><img src="/static/images/ty0_r2_c5.png"></div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
